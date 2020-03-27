@@ -5,6 +5,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import Toast from 'react-native-easy-toast'
 
 import LoginForm from '../../Components/Acount/LoginForm'
+import LoginFacebook from '../../Components/Acount/LoginFacebook'
 
 
 const Login = ({ navigation }) => {
@@ -19,7 +20,7 @@ const Login = ({ navigation }) => {
             </View>
             <Divider style={styles.divider} />
             <View style={styles.viewContainer}>
-                <Text>Login Social</Text>
+                <LoginFacebook toastRef={toastRef} navigation={navigation} />
             </View>
             <Toast ref={toastRef} position="center" opacity={0.8} />
         </KeyboardAwareScrollView>
