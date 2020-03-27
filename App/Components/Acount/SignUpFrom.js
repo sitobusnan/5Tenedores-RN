@@ -41,8 +41,6 @@ const SignUpFrom = ({ toastRef, navigation }) => {
 
     }
 
-    console.log(visibleLoading)
-
     return (
         <View style={styles.formContainer} >
             <Input
