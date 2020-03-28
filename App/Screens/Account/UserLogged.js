@@ -28,7 +28,7 @@ const UserLogged = () => {
     return (
         <View style={styles.viewUserInfo}>
             <InfoUser userInfo={userInfo} setreloadData={setreloadData} settextLoading={settextLoading} setisVisible={setisVisible} />
-            <AccountOptions />
+            <AccountOptions userInfo={userInfo} setreloadData={setreloadData} toastRef={toastRef} />
             <Button
                 title="LogOut"
                 titleStyle={styles.btnLogOutText}

@@ -9,7 +9,7 @@ import ChangeEmail from './Modals/ChangeEmail'
 import ChangePassword from './Modals/ChangePassword'
 
 
-const AccountOptions = () => {
+const AccountOptions = ({ userInfo, setreloadData, toastRef }) => {
 
     const [isVisible, setisVisible] = useState(false)
     const [child, setchild] = useState(<></>)
@@ -22,7 +22,7 @@ const AccountOptions = () => {
             iconColorLeft: "#ccc",
             iconNameRight: "chevron-right",
             iconColorRight: "#ccc",
-            onPress: () => selectedComponent(ChangeDisplayName)
+            onPress: () => selectedComponent(<ChangeDisplayName displayName={userInfo.displayName} setisVisibleModal={setisVisible} setreloadData={setreloadData} toastRef={toastRef} />)
         },
         {
             title: "Cambiar Email",
@@ -31,7 +31,7 @@ const AccountOptions = () => {
             iconColorLeft: "#ccc",
             iconNameRight: "chevron-right",
             iconColorRight: "#ccc",
-            onPress: () => selectedComponent(ChangeEmail)
+            onPress: () => selectedComponent(<ChangeEmail displayEmail={userInfo.email} setisVisibleModal={setisVisible} setreloadData={setreloadData} toastRef={toastRef} />)
         },
         {
             title: "Cambiar Contraseña",
@@ -40,7 +40,7 @@ const AccountOptions = () => {
             iconColorLeft: "#ccc",
             iconNameRight: "chevron-right",
             iconColorRight: "#ccc",
-            onPress: () => selectedComponent(ChangePassword)
+            onPress: () => selectedComponent(<ChangePassword userInfo={userInfo} setisVisibleModal={setisVisible} setreloadData={setreloadData} toastRef={toastRef} />)
         },
 
 
